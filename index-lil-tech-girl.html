@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>KHOSH — Luxury Tech Portal</title>
+  <meta name="description" content="KHOSH is a luxury tech portal with subdomains for Code, Cable, and IT. Ultra-modern dark theme with gold accents and electronic blue/green highlights." />
+  <style>
+    :root{
+      --bg:#000000;          /* Dark Mode background */
+      --bg-2:#0a0f1a;        /* Subtle deep blue for shadows */
+      --text:#e5e7eb;        /* Light gray text */
+      --muted:#9ca3af;       /* Muted text */
+      --gold:#D4AF37;        /* Gold accent */
+      --blue:#1D4ED8;        /* Electric blue */
+      --blue-2:#3B82F6;      /* Lighter electric blue */
+      --green:#10B981;       /* Electronic green */
+      --card:#0b1220;        /* Card bg */
+      --border:#1f2937;      /* Border */
+      --shadow-glow: 0 0 30px rgba(29,78,216,.35), 0 0 10px rgba(16,185,129,.25);
+    }
+    /* Light mode overrides */
+    body.light {
+      --bg:#ffffff;
+      --bg-2:#f5f7fb;
+      --text:#111827;
+      --muted:#4b5563;
+      --card:#ffffff;
+      --border:#e5e7eb;
+      --shadow-glow: 0 0 24px rgba(212,175,55,.25), 0 0 10px rgba(59,130,246,.2);
+    }
+    /* Stealth mode overrides (ultra minimal) */
+    body.stealth {
+      --bg:#000000;
+      --bg-2:#000000;
+      --text:#cbd5e1;
+      --muted:#64748b;
+      --gold:#888888; /* neutralize */
+      --blue:#7f7f7f;
+      --blue-2:#9e9e9e;
+      --green:#7f7f7f;
+      --card:#000000;
+      --border:#111111;
+      --shadow-glow:none;
+    }
+
+    /* Base */
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; background: radial-gradient(1200px 800px at 80% -10%, rgba(29,78,216,.18), transparent 60%),
+                         radial-gradient(900px 600px at 10% 110%, rgba(16,185,129,.12), transparent 60%),
+                         var(--bg);
+      color:var(--text); font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      line-height:1.6; letter-spacing:.2px;
+    }
+    a{color:inherit; text-decoration:none}
+    img{max-width:100%; display:block}
+    .container{max-width:1200px; margin:0 auto; padding:0 20px}
+
+    /* Navbar */
+    .nav{position:sticky; top:0; z-index:50; backdrop-filter:saturate(160%) blur(6px);}
+    .nav-inner{display:flex; align-items:center; justify-content:space-between; padding:14px 0; border-bottom:1px solid var(--border)}
+    .brand{display:flex         ; align-items:center; }
+    .logo{width:32px; height:32px; border-radius:8px; background:linear-gradient(145deg, var(--blue), var(--blue-2)); box-shadow: var(--shadow-glow)}
+    .brand h1{font-size:82px; letter-spacing:.8px; margin:0; font-weight:700}
+    .nav-links{display:flex; gap:18px; align-items:center}
+    .nav-links a{padding:8px 12px; border-radius:999px; border:1px solid transparent; transition:.25s}
+    .nav-links a:hover{border-color:var(--gold); color:var(--gold)}
+    .cta{background:var(--gold); color:#111; padding:9px 14px; border-radius:999px; font-weight:700}
+    .cta:hover{filter:brightness(1.05)}
+
+    /* Mobile menu */
+    .hamburger{display:none; flex-direction:column; gap:4px}
+    .hamburger span{width:22px; height:2px; background:var(--text)}
+    @media (max-width: 880px){
+      .nav-links{display:none}
+      .hamburger{display:flex}
+    }
+
+    /* Hero */
+    .hero{position:relative; padding:72px 0 48px; overflow:hidden}
+    .hero-grid{display:grid; grid-template-columns: 1.5fr 1fr; gap:80px; align-items:center}
+    @media (max-width: 1000px){.hero-grid{grid-template-columns:1fr; gap:80px}}
+    .eyebrow{color:var(--muted); font-size:13px; text-transform:uppercase; letter-spacing:2px}
+    .title{font-size:clamp(32px, 4.2vw, 56px); line-height:1.05; margin:.2em 0 .4em; font-weight:1000}
+    .subtitle{color:var(--muted); font-size:18px; max-width:52ch}
+    .hero-cta{display:flex; gap:12px; margin-top:22px}
+    .btn{border:1px solid var(--border); padding:10px 14px; border-radius:12px; transition:.25s; background:linear-gradient(180deg, rgba(255,255,255,.02), transparent)}
+    .btn:hover{border-color:var(--gold); box-shadow: var(--shadow-glow)}
+    .btn.primary{background:var(--gold); color:#111; font-weight:800}
+
+    /* Simulated 3D object (SVG blob) */
+    .blob-wrap{position:relative; aspect-ratio:1/1; filter:drop-shadow(0 40px 80px rgba(59,130,246,.25))}
+    .blob{width:100%; height:100%; animation: float 8s ease-in-out infinite}
+    .halo{position:absolute; inset:8% 6% 0; border-radius:40%; background:radial-gradient(closest-side, rgba(59,130,246,.25), transparent 70%)}
+    @keyframes float{ 0%,100%{ transform:translateY(0) } 50%{ transform:translateY(-10px) } }
+
+    img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: bottom;
+    margin-top: auto;
+} 
+      </style>
+</head>
+<body>
+<img src="21.png"      /> 
+  
+            </header>
+
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile menu minimal example: convert primary links into a simple prompt (placeholder)
+    function toggleMenu(){
+      const nav = document.querySelector('.nav-links');
+      if(!nav) return; nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+      if(nav.style.display === 'flex'){ nav.style.flexDirection = 'column'; nav.style.background = 'var(--bg)'; nav.style.position='absolute'; nav.style.right='20px'; nav.style.top='58px'; nav.style.padding='12px'; nav.style.border='1px solid var(--border)'; nav.style.borderRadius='12px' }
+    }
+
+    // Light / Dark
+    function toggleLight(){ document.body.classList.toggle('light') }
+    // Stealth
+    function toggleStealth(){ document.body.classList.toggle('stealth') }
+
+    // Optional: blob morph loop (single hero only, non-floating elsewhere)
+    (function morphBlob(){
+      const p = document.getElementById('blobPath');
+      if(!p) return;
+      const shapes=[
+        'M305,77C361,80,412,109,453,151C494,193,525,249,523,306C521,363,486,420,438,457C389,493,327,509,267,507C206,505,146,485,111,441C75,396,62,327,76,268C90,208,130,158,177,121C223,84,276,74,305,77Z',
+        'M315,94C370,104,431,127,470,170C509,212,525,275,510,333C494,391,447,443,392,472C337,501,274,509,219,488C165,467,120,418,95,363C70,308,66,246,94,196C122,146,182,109,237,97C292,85,340,85,315,94Z',
+        'M305,86C360,92,414,113,457,149C500,185,531,237,534,296C537,355,512,421,463,458C414,495,341,503,281,495C221,487,174,463,135,423C96,383,64,327,72,270C80,213,129,155,179,119C229,83,279,80,305,86Z'
+      ];
+      let i=0; setInterval(()=>{ i=(i+1)%shapes.length; p.setAttribute('d', shapes[i]); }, 4200);
+    })();
+  </script>
+</body>
+</html>
